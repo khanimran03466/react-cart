@@ -1,0 +1,39 @@
+@import "colors";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $secondarydark;
+    padding: 1rem 2rem;
+
+    a {
+            display: flex;
+            margin: 0 1rem;
+            color: $tertiary;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+    nav{
+        display: flex;      
+        
+        a {
+            position: relative;
+            
+            > p{
+                position: absolute;
+                transform: translate(70%, 50%);
+                background-color: $primary;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: .7rem;
+            }
+        }
+    }
+}
