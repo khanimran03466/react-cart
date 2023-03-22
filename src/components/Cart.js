@@ -3,7 +3,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-  const { cartItems } = useSelector( state => state.cart);
+  const { cartItems, subTotal, shipping, tax, total } = useSelector( (state) => state.cart );
 
   const dispach = useDispatch();
 
@@ -12,6 +12,7 @@ const Cart = () => {
       type: "addToCart",
       payload: {id}
     });
+    dispach({ type: "cartTotal" });
   }
 
     const decrement = (id) => {
@@ -19,6 +20,7 @@ const Cart = () => {
         type: "decrement",
         payload: { id },
       });
+      dispach({ type: "cartTotal" });
     };
 
     const deleteHandler = (id) => {
@@ -26,6 +28,9 @@ const Cart = () => {
         type: "deleteFromCart",
         payload: { id },
       });
+
+      dispach({ type: "cartTotal" });
+
     };
 
 
@@ -52,10 +57,10 @@ const Cart = () => {
       </main>
       <aside>
         <div>
-          <h2>Subtotal: ${456}</h2>
-          <h2>Shipping: ${456}</h2>
-          <h2>Tax: ${20}</h2>
-          <h2>Total: ${34534634}</h2>
+          <h2>Subtotal: ${subTotal}</h2>
+          <h2>Shipping: ${shipping}</h2>
+          <h2>Tax: ${tax}</h2>
+          <h2>Total: ${total}</h2>
         </div>
       </aside>
     </div>

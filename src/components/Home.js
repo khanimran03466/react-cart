@@ -11,13 +11,13 @@ const Home = () => {
   const productList = [
     {
       name: "Mac Book",
-      price: "1,23,999",
+      price: 123999,
       imgSrc: img1,
       id: "ergrg",
     },
     {
       name: "Mac Book Air",
-      price: "1,20,999",
+      price: 120999,
       imgSrc: img2,
       id: "sdcsdvdf",
     },
@@ -27,6 +27,7 @@ const Home = () => {
 
   const addToCardHandler = (options) => {
     dispach({ type: "addToCart", payload: options });
+    dispach({ type: "cartTotal" });
     toast.success("Added to Cart");
   };
 
