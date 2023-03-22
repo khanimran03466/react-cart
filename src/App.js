@@ -6,6 +6,7 @@ import Header from "./components/Header";
 
 import { Toaster } from "react-hot-toast";
 import Cart from "./components/Cart";
+import Erorr from "./components/Erorr";
 
 function App() {
   return (
